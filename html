@@ -1,0 +1,23 @@
+class RobotVacuum:
+    def _init_(self):
+        self.position = (0, 0)
+
+    def move(self, direction):
+        x, y = self.position
+        if direction == "up":
+            self.position = (x, y + 1)
+        elif direction == "down":
+            self.position = (x, y - 1)
+        elif direction == "left":
+            self.position = (x - 1, y)
+        elif direction == "right":
+            self.position = (x + 1, y)
+
+    def clean(self):
+        print(f"Cleaning at position {self.position}")
+
+robot = RobotVacuum()
+robot.move("up")
+robot.clean()
+robot.move("right")
+robot.clean()
